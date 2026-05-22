@@ -5,11 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Mc Anthonio Trading – Signaux VIP & Outils Algorithmiques Gratuits</title>
 <meta name="description" content="Accédez gratuitement aux signaux institutionnels SMC/ICT et aux outils algorithmiques en devenant partenaire Deriv." />
+<link rel="canonical" href="https://mc-anthonio-trading.vercel.app/" />
 
-<meta property="og:title" content="Mc Anthonio Trading – Signaux VIP" />
-<meta property="og:description" content="Rejoignez notre club exclusif. Signaux SMC/ICT et outils algorithmiques 100% gratuits avec Deriv." />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://www.facebook.com/ranthone.mzik" />
+<meta property="og:title" content="Mc Anthonio Trading – Signaux VIP & Outils Gratuits" />
+<meta property="og:description" content="Accédez gratuitement aux signaux institutionnels SMC/ICT et aux outils algorithmiques en devenant partenaire Deriv." />
+<meta property="og:url" content="https://mc-anthonio-trading.vercel.app/" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -45,6 +46,7 @@
     overflow-x: hidden;
   }
 
+  /* ── Noise texture overlay ── */
   body::before {
     content: '';
     position: fixed;
@@ -54,6 +56,7 @@
     z-index: 0;
   }
 
+  /* ── Navbar ── */
   #navbar {
     position: fixed;
     top: 0; left: 0; right: 0;
@@ -67,6 +70,11 @@
     box-shadow: 0 1px 0 rgba(255,255,255,0.05);
   }
 
+  /* ── Google Fonts Display Swap Optimization ── */
+  @font-face { font-family: 'Syne'; font-display: swap; }
+  @font-face { font-family: 'DM Sans'; font-display: swap; }
+
+  /* ── Gold glow button ── */
   .btn-gold {
     background: linear-gradient(135deg, #F39C12 0%, #e67e22 100%);
     color: #0B0E14;
@@ -87,6 +95,7 @@
     50% { box-shadow: 0 0 0 14px rgba(243,156,18,0); }
   }
 
+  /* ── Green WA button ── */
   .btn-wa {
     background: linear-gradient(135deg, #2ECC71 0%, #27ae60 100%);
     color: #fff;
@@ -106,6 +115,7 @@
     50% { box-shadow: 0 0 0 12px rgba(46,204,113,0); }
   }
 
+  /* ── Language switcher ── */
   .lang-btn {
     font-family: 'Syne', sans-serif;
     font-weight: 600;
@@ -126,6 +136,7 @@
     background: rgba(243,156,18,0.08);
   }
 
+  /* ── Hero gradient orbs ── */
   .orb {
     position: absolute;
     border-radius: 50%;
@@ -136,6 +147,7 @@
   .orb-gold { background: #F39C12; width: 480px; height: 480px; top: -120px; left: -100px; }
   .orb-green { background: #2ECC71; width: 360px; height: 360px; top: 60px; right: -120px; }
 
+  /* ── Cards ── */
   .benefit-card {
     background: #161A23;
     border: 1px solid rgba(255,255,255,0.06);
@@ -160,6 +172,7 @@
   }
   .benefit-card:hover::before { opacity: 1; }
 
+  /* ── Timeline ── */
   .step-card {
     background: #161A23;
     border: 1px solid rgba(255,255,255,0.06);
@@ -181,6 +194,7 @@
     box-shadow: 0 4px 16px rgba(243,156,18,0.3);
   }
 
+  /* ── Section fade-in ── */
   .reveal {
     opacity: 0;
     transform: translateY(28px);
@@ -191,6 +205,7 @@
     transform: translateY(0);
   }
 
+  /* ── Badge ── */
   .badge {
     display: inline-flex;
     align-items: center;
@@ -206,6 +221,7 @@
     padding: 4px 14px;
   }
 
+  /* ── Icon circle ── */
   .icon-circle {
     width: 60px; height: 60px;
     border-radius: 50%;
@@ -214,6 +230,7 @@
     margin-bottom: 1rem;
   }
 
+  /* ── Gold accent line ── */
   .gold-line {
     width: 48px; height: 3px;
     background: linear-gradient(90deg, #F39C12, transparent);
@@ -221,14 +238,7 @@
     margin: 12px auto 0;
   }
 
-  .faq-trigger:checked ~ .faq-content {
-    max-height: 200px;
-    padding-top: 12px;
-  }
-  .faq-trigger:checked ~ label i {
-    transform: rotate(180deg);
-  }
-
+  /* ── Footer ── */
   #footer {
     background: #0a0d13;
     border-top: 1px solid rgba(255,255,255,0.06);
@@ -243,22 +253,7 @@
   }
   .footer-link:hover { color: #fff; }
 
-  #scrollTopBtn {
-    position: fixed;
-    bottom: 20px; right: 20px;
-    z-index: 90;
-    background: rgba(22, 26, 35, 0.8);
-    border: 1px solid rgba(255,255,255,0.1);
-    backdrop-filter: blur(10px);
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease;
-  }
-  #scrollTopBtn.show {
-    opacity: 1;
-    visibility: visible;
-  }
-
+  /* ── Scrollbar ── */
   ::-webkit-scrollbar { width: 5px; }
   ::-webkit-scrollbar-track { background: #0B0E14; }
   ::-webkit-scrollbar-thumb { background: #F39C12; border-radius: 3px; }
@@ -268,7 +263,7 @@
 
 <nav id="navbar" class="px-4 md:px-8">
   <div class="max-w-6xl mx-auto flex items-center justify-between h-16">
-    <a href="#" class="flex items-center gap-2 group">
+    <a href="#" class="flex items-center gap-2 group" aria-label="Mc Anthonio Trading Accueil">
       <span class="w-8 h-8 rounded-lg flex items-center justify-center" style="background:linear-gradient(135deg,#F39C12,#e67e22);">
         <i class="fa-solid fa-chart-line text-sm" style="color:#0B0E14;"></i>
       </span>
@@ -279,14 +274,14 @@
 
     <div class="flex items-center gap-2 md:gap-3">
       <div class="flex items-center gap-1 mr-1">
-        <button class="lang-btn active" onclick="changeLanguage('fr')" id="btn-fr">FR</button>
-        <button class="lang-btn" onclick="changeLanguage('mg')" id="btn-mg">MG</button>
-        <button class="lang-btn" onclick="changeLanguage('en')" id="btn-en">EN</button>
+        <button class="lang-btn active" onclick="changeLanguage('fr')" id="btn-fr" aria-label="Changer la langue en Français">FR</button>
+        <button class="lang-btn" onclick="changeLanguage('mg')" id="btn-mg" aria-label="Changer la langue en Malagasy">MG</button>
+        <button class="lang-btn" onclick="changeLanguage('en')" id="btn-en" aria-label="Changer la langue en Anglais">EN</button>
       </div>
       <a href="https://wa.me/261381154993?text=Bonjour%20Mc%20Anthonio,%20j'ai%20cr%C3%A9%C3%A9%20mon%20compte%20Deriv%20via%20ton%20lien.%20Voici%20mon%20ID%20pour%20rejoindre%20le%20club%20:%20"
-         target="_blank" rel="noopener"
+         target="_blank" rel="noopener noreferrer"
          class="btn-wa flex items-center gap-2 text-xs md:text-sm px-3 md:px-5 py-2">
-        <i class="fa-brands fa-whatsapp text-base"></i>
+        <i class="fa-brands fa-whatsapp text-base" aria-hidden="true"></i>
         <span class="hidden sm:inline" data-i18n="nav_wa">Aide WhatsApp</span>
       </a>
     </div>
@@ -299,7 +294,7 @@
 
   <div class="relative z-10 max-w-6xl mx-auto px-4 md:px-8 py-20 md:py-28 text-center">
     <div class="inline-flex items-center gap-2 mb-6">
-      <span class="badge reveal"><i class="fa-solid fa-crown text-xs"></i> <span data-i18n="hero_badge">ACCÈS VVIP GRATUIT</span></span>
+      <span class="badge reveal"><i class="fa-solid fa-crown text-xs" aria-hidden="true"></i> <span data-i18n="hero_badge">ACCÈS VVIP GRATUIT</span></span>
     </div>
 
     <h1 class="font-display font-extrabold text-4xl md:text-6xl lg:text-7xl leading-tight mb-6 reveal" style="transition-delay:0.1s;">
@@ -313,34 +308,34 @@
     </p>
 
     <p class="text-sm font-display font-semibold mb-10 reveal" style="color:#F39C12;transition-delay:0.25s;" data-i18n="hero_condition">
-      <i class="fa-solid fa-circle-check mr-1"></i> Condition unique : S'inscrire sur Deriv via notre lien partenaire
+      <i class="fa-solid fa-circle-check mr-1" aria-hidden="true"></i> Condition unique : S'inscrire sur Deriv via notre lien partenaire
     </p>
 
     <div class="flex flex-col sm:flex-row items-center justify-center gap-4 reveal" style="transition-delay:0.3s;">
-      <a href="https://track.deriv.com/_H3lZ0sY8Gb31hit6RV3zsGNd7ZgqdRLk/1/" target="_blank" rel="noopener"
+      <a href="https://track.deriv.com/_H3lZ0sY8Gb31hit6RV3zsGNd7ZgqdRLk/1/" target="_blank" rel="noopener noreferrer"
          class="btn-gold flex items-center gap-3 text-base md:text-lg px-8 py-4 w-full sm:w-auto justify-center">
-        <i class="fa-solid fa-rocket"></i>
+        <i class="fa-solid fa-rocket" aria-hidden="true"></i>
         <span data-i18n="hero_cta">Créer mon Compte Deriv Gratuit</span>
-        <i class="fa-solid fa-arrow-right"></i>
+        <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
       </a>
       <a href="#steps"
          class="flex items-center gap-2 text-sm font-semibold px-6 py-4 rounded-full border border-white/10 hover:border-white/30 transition-colors" style="color:#94A3B8;">
-        <i class="fa-solid fa-list-ol" style="color:#F39C12;"></i>
+        <i class="fa-solid fa-list-ol" style="color:#F39C12;" aria-hidden="true"></i>
         <span data-i18n="hero_guide">Voir le tutoriel</span>
       </a>
     </div>
 
     <div class="flex flex-wrap items-center justify-center gap-6 mt-14 reveal" style="transition-delay:0.4s;">
       <div class="flex items-center gap-2 text-sm" style="color:#94A3B8;">
-        <i class="fa-solid fa-shield-halved" style="color:#2ECC71;"></i>
+        <i class="fa-solid fa-shield-halved" style="color:#2ECC71;" aria-hidden="true"></i>
         <span data-i18n="trust_1">Plateforme régulée</span>
       </div>
       <div class="flex items-center gap-2 text-sm" style="color:#94A3B8;">
-        <i class="fa-solid fa-bolt" style="color:#F39C12;"></i>
+        <i class="fa-solid fa-bolt" style="color:#F39C12;" aria-hidden="true"></i>
         <span data-i18n="trust_2">Accès instantané</span>
       </div>
       <div class="flex items-center gap-2 text-sm" style="color:#94A3B8;">
-        <i class="fa-solid fa-mobile-screen-button" style="color:#2ECC71;"></i>
+        <i class="fa-solid fa-mobile-screen-button" style="color:#2ECC71;" aria-hidden="true"></i>
         <span data-i18n="trust_3">MVola • Orange Money • Airtel</span>
       </div>
     </div>
@@ -358,7 +353,7 @@
     <div class="grid md:grid-cols-3 gap-6">
       <div class="benefit-card p-7 reveal" style="transition-delay:0.05s;">
         <div class="icon-circle" style="background:rgba(243,156,18,0.12);">
-          <i class="fa-solid fa-satellite-dish" style="color:#F39C12;"></i>
+          <i class="fa-solid fa-satellite-dish" style="color:#F39C12;" aria-hidden="true"></i>
         </div>
         <h3 class="font-display font-bold text-xl mb-3" data-i18n="card1_title">Signaux VIP Gratuits</h3>
         <p class="text-sm leading-relaxed" style="color:#94A3B8;" data-i18n="card1_desc">Analyses haute précision basées sur les concepts SMC/ICT : liquidités, BOS, ChoCH. Couverture XAU/USD, Forex majeurs et indices synthétiques Deriv.</p>
@@ -371,10 +366,10 @@
 
       <div class="benefit-card p-7 reveal" style="transition-delay:0.12s;border-color:rgba(243,156,18,0.15);">
         <div class="absolute top-4 right-4 badge text-xs" style="font-size:0.65rem;">
-          <i class="fa-solid fa-star text-xs"></i> EXCLUSIF
+          <i class="fa-solid fa-star text-xs" aria-hidden="true"></i> EXCLUSIF
         </div>
         <div class="icon-circle" style="background:rgba(243,156,18,0.12);">
-          <i class="fa-solid fa-microchip" style="color:#F39C12;"></i>
+          <i class="fa-solid fa-microchip" style="color:#F39C12;" aria-hidden="true"></i>
         </div>
         <h3 class="font-display font-bold text-xl mb-3" data-i18n="card2_title">Outils Algorithmiques</h3>
         <p class="text-sm leading-relaxed" style="color:#94A3B8;" data-i18n="card2_desc">Accès exclusif aux terminaux de trading communautaires et aux scripts automatisés testés par notre équipe. Tradez plus intelligemment, pas plus fort.</p>
@@ -387,7 +382,7 @@
 
       <div class="benefit-card p-7 reveal" style="transition-delay:0.19s;">
         <div class="icon-circle" style="background:rgba(46,204,113,0.12);">
-          <i class="fa-solid fa-headset" style="color:#2ECC71;"></i>
+          <i class="fa-solid fa-headset" style="color:#2ECC71;" aria-hidden="true"></i>
         </div>
         <h3 class="font-display font-bold text-xl mb-3" data-i18n="card3_title">Support Local & Dépôts</h3>
         <p class="text-sm leading-relaxed" style="color:#94A3B8;" data-i18n="card3_desc">Accompagnement complet en Malagasy et Français pour vos dépôts et retraits via Deriv P2P et Mobile Money local. Disponible 7j/7 sur WhatsApp.</p>
@@ -411,14 +406,15 @@
     </div>
 
     <div class="flex flex-col gap-4">
+
       <div class="step-card p-5 md:p-6 flex gap-4 reveal" style="transition-delay:0.05s;">
         <div class="step-num">1</div>
         <div>
           <h4 class="font-display font-bold text-base md:text-lg mb-1" data-i18n="step1_title">Cliquer sur le bouton d'inscription</h4>
           <p class="text-sm leading-relaxed" style="color:#94A3B8;" data-i18n="step1_desc">Cliquez sur le bouton "Créer mon Compte Deriv Gratuit" ci-dessous ou en haut de la page. Ce lien partenaire est essentiel pour valider votre accès VIP.</p>
-          <a href="https://track.deriv.com/_H3lZ0sY8Gb31hit6RV3zsGNd7ZgqdRLk/1/" target="_blank" rel="noopener"
+          <a href="https://track.deriv.com/_H3lZ0sY8Gb31hit6RV3zsGNd7ZgqdRLk/1/" target="_blank" rel="noopener noreferrer"
              class="inline-flex items-center gap-2 mt-3 text-sm font-semibold px-4 py-2 rounded-full" style="background:rgba(243,156,18,0.12);color:#F39C12;border:1px solid rgba(243,156,18,0.3);">
-            <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+            <i class="fa-solid fa-arrow-up-right-from-square text-xs" aria-hidden="true"></i>
             <span data-i18n="step1_btn">Ouvrir Deriv →</span>
           </a>
         </div>
@@ -444,7 +440,7 @@
         <div class="step-num">4</div>
         <div>
           <div class="inline-flex items-center gap-1 text-xs font-bold mb-2 px-2 py-1 rounded" style="background:rgba(148,163,184,0.1);color:#94A3B8;">
-            <i class="fa-solid fa-circle-info text-xs"></i> <span data-i18n="optional">Optionnel</span> — MT5
+            <i class="fa-solid fa-circle-info text-xs" aria-hidden="true"></i> <span data-i18n="optional">Optionnel</span> — MT5
           </div>
           <h4 class="font-display font-bold text-base md:text-lg mb-1" data-i18n="step4_title">Créer un Compte MT5 (pour MetaTrader)</h4>
           <p class="text-sm leading-relaxed" style="color:#94A3B8;" data-i18n="step4_desc">Si vous souhaitez utiliser MetaTrader 5, créez un compte de type <strong style="color:#fff;">"Derived"</strong> ou <strong style="color:#fff;">"Financial"</strong>. Vous recevrez vos identifiants MT5 (login + mot de passe serveur).</p>
@@ -466,14 +462,15 @@
           <p class="text-sm leading-relaxed" style="color:#94A3B8;" data-i18n="step6_desc">Copiez votre ID Deriv (numéro CR… ou identifiant MT5) et envoyez-le nous sur WhatsApp. Notre équipe validera votre accès au club VIP dans les plus brefs délais.</p>
         </div>
       </div>
+
     </div>
 
     <div class="text-center mt-12 reveal" style="transition-delay:0.35s;">
       <p class="text-sm mb-6" style="color:#94A3B8;" data-i18n="final_cta_intro">Compte créé ? Envoyez-nous votre ID maintenant pour activer votre accès VIP !</p>
       <a href="https://wa.me/261381154993?text=Bonjour%20Mc%20Anthonio,%20j'ai%20cr%C3%A9%C3%A9%20mon%20compte%20Deriv%20via%20ton%20lien.%20Voici%20mon%20ID%20pour%20rejoindre%20le%20club%20:%20"
-         target="_blank" rel="noopener"
+         target="_blank" rel="noopener noreferrer"
          class="btn-wa inline-flex items-center gap-3 text-base md:text-lg px-8 py-5">
-        <i class="fa-brands fa-whatsapp text-xl"></i>
+        <i class="fa-brands fa-whatsapp text-xl" aria-hidden="true"></i>
         <span data-i18n="final_cta_btn">Envoyer mon ID sur WhatsApp</span>
       </a>
       <p class="text-xs mt-4" style="color:#475569;" data-i18n="final_cta_note">Réponse garantie sous 24h • Support en Malagasy &amp; Français</p>
@@ -481,43 +478,12 @@
 
     <div class="mt-14 p-6 rounded-2xl text-center reveal" style="background:#161A23;border:1px solid rgba(243,156,18,0.18);">
       <p class="font-display font-bold text-lg mb-2" data-i18n="cta_box_title">Pas encore inscrit sur Deriv ?</p>
-      <p class="text-sm mb-5" style="color:#94A3B8;" data-i18n="cta_box_btn_desc">Commencez ici — c'est gratuit, rapide et requis pour accéder à nos ressources VIP.</p>
-      <a href="https://track.deriv.com/_H3lZ0sY8Gb31hit6RV3zsGNd7ZgqdRLk/1/" target="_blank" rel="noopener"
+      <p class="text-sm mb-5" style="color:#94A3B8;" data-i18n="cta_box_desc">Commencez ici — c'est gratuit, rapide et requis pour accéder à nos ressources VIP.</p>
+      <a href="https://track.deriv.com/_H3lZ0sY8Gb31hit6RV3zsGNd7ZgqdRLk/1/" target="_blank" rel="noopener noreferrer"
          class="btn-gold inline-flex items-center gap-3 text-sm md:text-base px-7 py-3">
-        <i class="fa-solid fa-rocket"></i>
+        <i class="fa-solid fa-rocket" aria-hidden="true"></i>
         <span data-i18n="cta_box_btn">Créer mon Compte Deriv Gratuit</span>
       </a>
-    </div>
-  </div>
-</section>
-
-<section id="faq" class="py-20 px-4 md:px-8 max-w-3xl mx-auto">
-  <div class="text-center mb-12 reveal">
-    <h2 class="font-display font-extrabold text-3xl mb-2" data-i18n="faq_title">Questions Fréquentes</h2>
-    <div class="gold-line"></div>
-  </div>
-
-  <div class="flex flex-col gap-4 reveal">
-    <div class="bg-card rounded-xl border border-white/5 overflow-hidden">
-      <input type="checkbox" id="faq-1" class="hidden faq-trigger" />
-      <label for="faq-1" class="flex justify-between items-center p-5 cursor-pointer font-semibold select-none">
-        <span data-i18n="faq1_q">Est-ce que l'accès aux signaux et outils est vraiment gratuit ?</span>
-        <i class="fa-solid fa-chevron-down text-sm text-gold transition-transform duration-300"></i>
-      </label>
-      <div class="faq-content max-h-0 transition-all duration-300 ease-in-out px-5 text-sm text-muted overflow-hidden">
-        <p class="pb-5" data-i18n="faq1_a">Oui, c'est 100% gratuit. Aucun abonnement mensuel ne vous sera demandé. Notre rémunération provient uniquement du partenariat d'affiliation avec Deriv, sans aucun frais supplémentaire pour vous.</p>
-      </div>
-    </div>
-
-    <div class="bg-card rounded-xl border border-white/5 overflow-hidden">
-      <input type="checkbox" id="faq-2" class="hidden faq-trigger" />
-      <label for="faq-2" class="flex justify-between items-center p-5 cursor-pointer font-semibold select-none">
-        <span data-i18n="faq2_q">Comment effectuer mes dépôts et retraits à Madagascar ?</span>
-        <i class="fa-solid fa-chevron-down text-sm text-gold transition-transform duration-300"></i>
-      </label>
-      <div class="faq-content max-h-0 transition-all duration-300 ease-in-out px-5 text-sm text-muted overflow-hidden">
-        <p class="pb-5" data-i18n="faq2_a">Vous pouvez utiliser la plateforme interne Deriv P2P (Peer-to-Peer) qui permet d'échanger directement avec d'autres traders locaux via MVola, Orange Money ou Airtel Money de manière sécurisée.</p>
-      </div>
     </div>
   </div>
 </section>
@@ -528,7 +494,7 @@
       <div>
         <div class="flex items-center gap-2 mb-2">
           <span class="w-7 h-7 rounded-lg flex items-center justify-center" style="background:linear-gradient(135deg,#F39C12,#e67e22);">
-            <i class="fa-solid fa-chart-line text-xs" style="color:#0B0E14;"></i>
+            <i class="fa-solid fa-chart-line text-xs" style="color:#0B0E14;" aria-hidden="true"></i>
           </span>
           <span class="font-display font-bold text-white">Mc <span style="color:#F39C12;">Anthonio</span> Trading</span>
         </div>
@@ -537,37 +503,34 @@
 
       <div class="flex flex-wrap items-center justify-center gap-5">
         <a href="mailto:rakotomangathony09@gmail.com" class="footer-link" title="Email">
-          <i class="fa-solid fa-envelope" style="color:#F39C12;"></i>
+          <i class="fa-solid fa-envelope" style="color:#F39C12;" aria-hidden="true"></i>
           <span>rakotomangathony09@gmail.com</span>
         </a>
-        <a href="https://www.facebook.com/ranthone.mzik" target="_blank" rel="noopener" class="footer-link" title="Facebook">
-          <i class="fa-brands fa-facebook" style="color:#4267B2;"></i>
+        <a href="https://www.facebook.com/ranthone.mzik" target="_blank" rel="noopener noreferrer" class="footer-link" title="Facebook" aria-label="Suivre sur Facebook">
+          <i class="fa-brands fa-facebook" style="color:#4267B2;" aria-hidden="true"></i>
           <span>Facebook</span>
         </a>
         <a href="https://wa.me/261381154993?text=Bonjour%20Mc%20Anthonio,%20j'ai%20cr%C3%A9%C3%A9%20mon%20compte%20Deriv%20via%20ton%20lien.%20Voici%20mon%20ID%20pour%20rejoindre%20le%20club%20:%20"
-           target="_blank" rel="noopener" class="footer-link" title="WhatsApp">
-          <i class="fa-brands fa-whatsapp" style="color:#2ECC71;"></i>
+           target="_blank" rel="noopener noreferrer" class="footer-link" title="WhatsApp" aria-label="Contacter sur WhatsApp">
+          <i class="fa-brands fa-whatsapp" style="color:#2ECC71;" aria-hidden="true"></i>
           <span>WhatsApp</span>
         </a>
       </div>
     </div>
 
     <div class="rounded-xl p-4 mb-6 text-xs leading-relaxed" style="background:#161A23;border:1px solid rgba(255,255,255,0.06);color:#475569;">
-      <i class="fa-solid fa-triangle-exclamation mr-1" style="color:#F39C12;"></i>
+      <i class="fa-solid fa-triangle-exclamation mr-1" style="color:#F39C12;" aria-hidden="true"></i>
       <span data-i18n="disclaimer">Avertissement sur les risques : Le trading de Forex et d'indices synthétiques implique un risque élevé en capital. Les performances passées ne garantissent pas les résultats futurs. Ne tradez qu'avec de l'argent que vous pouvez vous permettre de perdre. Informez-vous et formez-vous avant d'investir.</span>
     </div>
 
     <p class="text-center text-xs" style="color:#334155;">
-      © 2025 Mc Anthonio Trading — Made with <i class="fa-solid fa-heart text-red-500 mx-1"></i> in Madagascar
+      © 2026 Mc Anthonio Trading — Made with <i class="fa-solid fa-heart text-red-500 mx-1" aria-hidden="true"></i> in Madagascar
     </p>
   </div>
 </footer>
 
-<button id="scrollTopBtn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="w-10 h-10 rounded-full flex items-center justify-center text-gold shadow-lg hover:text-white transition-all duration-300">
-  <i class="fa-solid fa-arrow-up"></i>
-</button>
-
 <script>
+// ── Translations ────────────────────────────────────────────────────
 const translations = {
   fr: {
     nav_wa: "Aide WhatsApp",
@@ -575,7 +538,7 @@ const translations = {
     hero_h1_line1: "Signaux Institutionnels",
     hero_h1_line2: "SMC / ICT & Outils Algo",
     hero_h1_line3: "100% Gratuits",
-    hero_subtitle: "Rejoignez notre club exclusif en créant votre compte Deriv via notre lien partenaire. Aucun frais, aucune condition cachée — juste l'accès à nos ressources premium.",
+    hero_subtitle: "Rejoignez notre club exclusif en créant votre compte Deriv via notre lien partenaire. Aucun frais, aucune condition cached — juste l'accès à nos ressources premium.",
     hero_condition: "Condition unique : S'inscrire sur Deriv via notre lien partenaire",
     hero_cta: "Créer mon Compte Deriv Gratuit",
     hero_guide: "Voir le tutoriel",
@@ -599,25 +562,20 @@ const translations = {
     step2_title: "Créer votre compte & valider l'email",
     step2_desc: "Entrez votre adresse email sur la page Deriv. Vérifiez votre boîte mail, cliquez sur le lien de confirmation, puis définissez votre mot de passe sécurisé.",
     step3_title: "Ajouter un Compte Réel sur Deriv",
-    step3_desc: "Depuis votre tableau de bord Deriv, cliquez sur \"Ajouter un compte réel\" et sélectionnez le type <strong style='color:#fff;'>\"Options &amp; Multiplicateurs\"</strong>. Complétez vos informations personnelles. Votre numéro de compte <strong style='color:#F39C12;'>CR…</strong> est votre ID principal.",
+    step3_desc: "Depuis votre tableau de bord Deriv, cliquez sur \"Ajouter un compte réel\" et sélectionnez le type \"Options & Multiplicateurs\". Complétez vos informations personnelles. Votre numéro de compte CR… est votre ID principal.",
     optional: "Optionnel",
     step4_title: "Créer un Compte MT5 (pour MetaTrader)",
-    step4_desc: "Si vous souhaitez utiliser MetaTrader 5, créez un compte de type <strong style='color:#fff;'>\"Derived\"</strong> ou <strong style='color:#fff;'>\"Financial\"</strong>. Vous recevrez vos identifiants MT5 (login + mot de passe serveur).",
+    step4_desc: "Si vous souhaitez utiliser MetaTrader 5, créez un compte de type \"Derived\" ou \"Financial\". Vous recevrez vos identifiants MT5 (login + mot de passe serveur).",
     step5_title: "Effectuer votre Premier Dépôt",
-    step5_desc: "Déposez via <strong style='color:#2ECC71;'>Deriv P2P</strong> ou Mobile Money (MVola, Orange Money, Airtel Money). Même un petit montant suffit pour activer votre compte et débloquer toutes les fonctionnalités. Contactez-nous sur WhatsApp pour de l'aide.",
+    step5_desc: "Déposez via Deriv P2P ou Mobile Money (MVola, Orange Money, Airtel Money). Même un petit montant suffit pour activer votre compte et débloquer toutes les fonctionnalités. Contactez-nous sur WhatsApp pour de l'aide.",
     step6_title: "Envoyer votre ID sur WhatsApp 🎉",
     step6_desc: "Copiez votre ID Deriv (numéro CR… ou identifiant MT5) et envoyez-le nous sur WhatsApp. Notre équipe validera votre accès au club VIP dans les plus brefs délais.",
     final_cta_intro: "Compte créé ? Envoyez-nous votre ID maintenant pour activer votre accès VIP !",
     final_cta_btn: "Envoyer mon ID sur WhatsApp",
     final_cta_note: "Réponse garantie sous 24h • Support en Malagasy & Français",
     cta_box_title: "Pas encore inscrit sur Deriv ?",
-    cta_box_btn_desc: "Commencez ici — c'est gratuit, rapide et requis pour accéder à nos ressources VIP.",
+    cta_box_desc: "Commencez ici — c'est gratuit, rapide et requis pour accéder à nos ressources VIP.",
     cta_box_btn: "Créer mon Compte Deriv Gratuit",
-    faq_title: "Questions Fréquentes",
-    faq1_q: "Est-ce que l'accès aux signaux et outils est vraiment gratuit ?",
-    faq1_a: "Oui, c'est 100% gratuit. Aucun abonnement mensuel ne vous sera demandé. Notre rémunération provient uniquement du partenariat d'affiliation avec Deriv, sans aucun frais supplémentaire pour vous.",
-    faq2_q: "Comment effectuer mes dépôts et retraits à Madagascar ?",
-    faq2_a: "Vous pouvez utiliser la plateforme interne Deriv P2P (Peer-to-Peer) qui permet d'échanger directement avec d'autres traders locaux via MVola, Orange Money ou Airtel Money de manière sécurisée.",
     footer_tagline: "Signaux VIP • Outils Algo • Support Local",
     disclaimer: "Avertissement sur les risques : Le trading de Forex et d'indices synthétiques implique un risque élevé en capital. Les performances passées ne garantissent pas les résultats futurs. Ne tradez qu'avec de l'argent que vous pouvez vous permettre de perdre. Informez-vous et formez-vous avant d'investir."
   },
@@ -648,28 +606,23 @@ const translations = {
     step1_title: "Tsindrio ny bokotra fisorohana",
     step1_desc: "Tsindrio ny bokotra \"Mamorona Kaonty Deriv Maimaim-poana\" etsy ambany na eny ambony pejy. Io rohy mpiara-miasa io no ilaina mba hanamarinana ny fidiran'ny VIP anao.",
     step1_btn: "Hivoaka amin'ny Deriv →",
-    step2_title: "Mamorona kaonty & manamarina ny email",
+    step2_title: "Mamorona kaonty & manamarina the email",
     step2_desc: "Ampidiro ny adiresy email anao amin'ny pejin'ny Deriv. Jereo ny voky mailaka, tsindrio ny rohy fanamarinana, ary ampidiro ny teny miafina voaro anao.",
     step3_title: "Hanampy Kaonty Tena amin'ny Deriv",
-    step3_desc: "Avy amin'ny dashboard Deriv anao, tsindrio ny \"Hanampy kaonty tena\" ary fidio ny karazana <strong style='color:#fff;'>\"Options &amp; Multiplicateurs\"</strong>. Fenoy ny mombamomba anao manokana. Ny isa kaonty <strong style='color:#F39C12;'>CR…</strong> dia ny ID lehibe anao.",
+    step3_desc: "Avy amin'ny dashboard Deriv anao, tsindrio ny \"Hanampy kaonty tena\" ary fidio ny karazana \"Options & Multiplicateurs\". Fenoy ny mombamomba anao manokana. Ny isa kaonty CR… dia ny ID lehibe anao.",
     optional: "Tsy voatery",
     step4_title: "Mamorona Kaonty MT5 (ho an'ny MetaTrader)",
-    step4_desc: "Raha te-hampiasa MetaTrader 5 ianao, mamorona kaonty karazana <strong style='color:#fff;'>\"Derived\"</strong> na <strong style='color:#fff;'>\"Financial\"</strong>. Handray ny mombamomba anao MT5 ianao (login + teny miafina server).",
+    step4_desc: "Raha te-hampiasa MetaTrader 5 ianao, mamorona kaonty karazana \"Derived\" na \"Financial\". Handray ny mombamomba anao MT5 ianao (login + teny miafina server).",
     step5_title: "Mampiditra Vola voalohany",
-    step5_desc: "Mampiditra amin'ny alàlan'ny <strong style='color:#2ECC71;'>Deriv P2P</strong> na Mobile Money (MVola, Orange Money, Airtel Money). Ampy aza ny vola kely mba hanafoanana ny kaonty anao sy hahafohezana ny fiasa rehetra. Mifandraisa aminay amin'ny WhatsApp mba hahazo fanampiana.",
+    step5_desc: "Mampiditra amin'ny alàlan'ny Deriv P2P na Mobile Money (MVola, Orange Money, Airtel Money). Ampy aza ny vola kely mba hanafoanana ny kaonty anao sy hahafohezana ny fiasa rehetra. Mifandraisa aminay amin'ny WhatsApp mba hahazo fanampiana.",
     step6_title: "Alefaso ny ID anao amin'ny WhatsApp 🎉",
     step6_desc: "Adikao ny ID Deriv anao (isa CR… na mombamomba MT5) ary alefaso aminay amin'ny WhatsApp. Ny ekipanay hanamarina ny fidiran'ny klioba VIP anao ao anatin'ny fotoana kely.",
     final_cta_intro: "Noforonina sahady ny kaonty? Alefaso aminay ny ID anao izao mba hanajanona ny fidiran'ny VIP anao!",
     final_cta_btn: "Alefaso ny ID amin'ny WhatsApp",
     final_cta_note: "Valiny voarantea ao anatin'ny 24ora • Fanohanana amin'ny Malagasy & Frantsay",
     cta_box_title: "Tsy mbola nisoratra anarana amin'ny Deriv?",
-    cta_box_btn_desc: "Manomboka eto — maimaim-poana, haingana ary ilaina mba hanarana ny loharanon-karena VIP anay.",
+    cta_box_desc: "Manomboka eto — maimaim-poana, haingana ary ilaina mba hanarana ny loharanon-karena VIP anay.",
     cta_box_btn: "Mamorona Kaonty Deriv Maimaim-poana",
-    faq_title: "Fanontaniana Matetika",
-    faq1_q: "Maimaim-poana tokoa ve ny fidirana amin'ny famantarana sy fitaovana ?",
-    faq1_a: "Eny, maimaim-poana 100%. Tsy misy sarany isam-bolana alaina aminao. Ny fidiram-bolanay dia avy amin'ny fiaraha-miasa amin'ny Deriv ihany, fa tsy misy sarany fanampiny ho anao.",
-    faq2_q: "Ahoana no fomba fampidirana sy famoahana vola eto Madagasikara ?",
-    faq2_a: "Afaka mampiasa ny sehatra anatiny Deriv P2P (Peer-to-Peer) ianao, izay ahafahanao mifanakalo mivantana amin'ireo mpivarotra eto an-toerana amin'ny alàlan'ny MVola, Orange Money na Airtel Money ao anatin'ny filaminana tanteraka.",
     footer_tagline: "Famantarana VIP • Fitaovana Algo • Fanohanana eto an-toerana",
     disclaimer: "Fampitandremana momba ny loza : Ny trading Forex sy indice synthétique dia mitondra loza lehibe amin'ny renivola. Ny fomba fiasa teo aloha dia tsy manome antoka ny vokatra ho avy. Aza mampiasa afa-tsy ny vola azonao very. Manazava sy mianara mialoha ny mandroso."
   },
@@ -703,30 +656,26 @@ const translations = {
     step2_title: "Create your account & verify email",
     step2_desc: "Enter your email address on the Deriv page. Check your inbox, click the confirmation link, then set your secure password.",
     step3_title: "Add a Real Account on Deriv",
-    step3_desc: "From your Deriv dashboard, click \"Add a real account\" and select the type <strong style='color:#fff;'>\"Options &amp; Multipliers\"</strong>. Fill in your personal information. Your account number <strong style='color:#F39C12;'>CR…</strong> is your main ID.",
+    step3_desc: "From your Deriv dashboard, click \"Add a real account\" and select the type \"Options & Multipliers\". Fill in your personal information. Your account number CR… is your main ID.",
     optional: "Optional",
     step4_title: "Create an MT5 Account (for MetaTrader)",
-    step4_desc: "If you want to use MetaTrader 5, create an account of type <strong style='color:#fff;'>\"Derived\"</strong> or <strong style='color:#fff;'>\"Financial\"</strong>. You will receive your MT5 credentials (login + server password).",
+    step4_desc: "If you want to use MetaTrader 5, create an account of type \"Derived\" or \"Financial\". You will receive your MT5 credentials (login + server password).",
     step5_title: "Make your First Deposit",
-    step5_desc: "Deposit via <strong style='color:#2ECC71;'>Deriv P2P</strong> or Mobile Money (MVola, Orange Money, Airtel Money). Even a small amount is enough to activate your account and unlock all features. Contact us on WhatsApp for help.",
+    step5_desc: "Deposit via Deriv P2P or Mobile Money (MVola, Orange Money, Airtel Money). Even a small amount is enough to activate your account and unlock all features. Contact us on WhatsApp for help.",
     step6_title: "Send your ID on WhatsApp 🎉",
     step6_desc: "Copy your Deriv ID (CR… number or MT5 identifier) and send it to us on WhatsApp. Our team will validate your VIP club access as soon as possible.",
     final_cta_intro: "Account created? Send us your ID now to activate your VIP access!",
     final_cta_btn: "Send my ID on WhatsApp",
     final_cta_note: "Guaranteed reply within 24h • Support in Malagasy & French",
     cta_box_title: "Not registered on Deriv yet?",
-    cta_box_btn_desc: "Start here — it's free, fast, and required to access our VIP resources.",
+    cta_box_desc: "Start here — it's free, fast, and required to access our VIP resources.",
     cta_box_btn: "Create my Free Deriv Account",
-    faq_title: "Frequently Asked Questions",
-    faq1_q: "Is access to signals and tools really free?",
-    faq1_a: "Yes, it is 100% free. No monthly subscription will ever be asked. Our revenue comes solely from our affiliation partnership with Deriv, at no extra cost to you.",
-    faq2_q: "How can I deposit and withdraw money in Madagascar?",
-    faq2_a: "You can use the built-in Deriv P2P (Peer-to-Peer) platform, which allows you to securely exchange with other local traders using MVola, Orange Money, or Airtel Money.",
     footer_tagline: "VIP Signals • Algo Tools • Local Support",
     disclaimer: "Risk Warning: Trading Forex and synthetic indices involves high capital risk. Past performance does not guarantee future results. Only trade with money you can afford to lose. Research and educate yourself before investing."
   }
 };
 
+// ── Language change ──────────────────────────────────────────────────
 let currentLang = 'fr';
 
 function changeLanguage(lang) {
@@ -734,8 +683,9 @@ function changeLanguage(lang) {
   const t = translations[lang];
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.getAttribute('data-i18n');
-    if (t[key] !== undefined) el.innerHTML = t[key]; // Modifié en innerHTML pour gérer les balises strong
+    if (t[key] !== undefined) el.textContent = t[key];
   });
+  // Update lang buttons
   ['fr', 'mg', 'en'].forEach(l => {
     const btn = document.getElementById('btn-' + l);
     if (btn) {
@@ -745,23 +695,17 @@ function changeLanguage(lang) {
   document.documentElement.lang = lang === 'mg' ? 'mg' : lang === 'en' ? 'en' : 'fr';
 }
 
+// ── Navbar scroll effect ─────────────────────────────────────────────
 const navbar = document.getElementById('navbar');
-const scrollTopBtn = document.getElementById('scrollTopBtn');
-
 window.addEventListener('scroll', () => {
   if (window.scrollY > 20) {
     navbar.classList.add('scrolled');
   } else {
     navbar.classList.remove('scrolled');
   }
-
-  if (window.scrollY > 400) {
-    scrollTopBtn.classList.add('show');
-  } else {
-    scrollTopBtn.classList.remove('show');
-  }
 }, { passive: true });
 
+// ── Intersection Observer for reveal animations ──────────────────────
 const revealEls = document.querySelectorAll('.reveal');
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
@@ -773,6 +717,7 @@ const observer = new IntersectionObserver((entries) => {
 
 revealEls.forEach(el => observer.observe(el));
 
+// ── Init with French ─────────────────────────────────────────────────
 changeLanguage('fr');
 </script>
 </body>
