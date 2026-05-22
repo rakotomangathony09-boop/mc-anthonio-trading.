@@ -194,6 +194,50 @@
     box-shadow: 0 4px 16px rgba(243,156,18,0.3);
   }
 
+  /* ── FAQ Accordion ── */
+  .faq-item {
+    background: #161A23;
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: border-color 0.3s;
+  }
+  .faq-item:hover {
+    border-color: rgba(243,156,18,0.25);
+  }
+  .faq-trigger {
+    width: 100%;
+    text-align: left;
+    padding: 18px 24px;
+    background: transparent;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+  }
+  .faq-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+    padding: 0 24px;
+    color: #94A3B8;
+    font-size: 0.92rem;
+    line-height: 1.6;
+  }
+  .faq-item.active .faq-content {
+    padding-bottom: 18px;
+  }
+  .faq-icon {
+    transition: transform 0.3s ease;
+    color: #F39C12;
+  }
+  .faq-item.active .faq-icon {
+    transform: rotate(180deg);
+  }
+
   /* ── Section fade-in ── */
   .reveal {
     opacity: 0;
@@ -356,7 +400,7 @@
           <i class="fa-solid fa-satellite-dish" style="color:#F39C12;" aria-hidden="true"></i>
         </div>
         <h3 class="font-display font-bold text-xl mb-3" data-i18n="card1_title">Signaux VIP Gratuits</h3>
-        <p class="text-sm leading-relaxed" style="color:#94A3B8;" data-i18n="card1_desc">Analyses haute précision basées sur les concepts SMC/ICT : liquidités, BOS, ChoCH. Couverture XAU/USD, Forex majeurs et indices synthétiques Deriv.</p>
+        <p class="text-sm leading-relaxed" style="color:#94A3B8;" data-i18n="card1_desc">Analyses haute précision basées on concepts SMC/ICT : liquidités, BOS, ChoCH. Couverture XAU/USD, Forex majeurs et indices synthétiques Deriv.</p>
         <div class="mt-5 flex flex-wrap gap-2">
           <span class="text-xs px-3 py-1 rounded-full" style="background:rgba(243,156,18,0.1);color:#F39C12;">XAU/USD</span>
           <span class="text-xs px-3 py-1 rounded-full" style="background:rgba(243,156,18,0.1);color:#F39C12;">SMC/ICT</span>
@@ -443,7 +487,7 @@
             <i class="fa-solid fa-circle-info text-xs" aria-hidden="true"></i> <span data-i18n="optional">Optionnel</span> — MT5
           </div>
           <h4 class="font-display font-bold text-base md:text-lg mb-1" data-i18n="step4_title">Créer un Compte MT5 (pour MetaTrader)</h4>
-          <p class="text-sm leading-relaxed" style="color:#94A3B8;" data-i18n="step4_desc">Si vous souhaitez utiliser MetaTrader 5, créez un compte de type <strong style="color:#fff;">"Derived"</strong> ou <strong style="color:#fff;">"Financial"</strong>. Vous recevrez vos identifiants MT5 (login + mot de passe serveur).</p>
+          <p class="text-sm leading-relaxed" style="color:#94A3B8;" data-i18n="step4_desc">Si vous souhaitez utiliser MetaTrader 5, créez un compte de type "Derived" ou "Financial". Vous recevrez vos identifiants MT5 (login + mot de passe serveur).</p>
         </div>
       </div>
 
@@ -464,8 +508,70 @@
       </div>
 
     </div>
+  </div>
+</section>
 
-    <div class="text-center mt-12 reveal" style="transition-delay:0.35s;">
+<section id="faq" class="py-20 md:py-28 px-4 md:px-8 bg-dark relative">
+  <div class="max-w-3xl mx-auto">
+    <div class="text-center mb-14 reveal">
+      <p class="text-xs font-display font-bold tracking-widest mb-3" style="color:#F39C12;" data-i18n="faq_eyebrow">DES QUESTIONS ?</p>
+      <h2 class="font-display font-extrabold text-3xl md:text-4xl mb-4" data-i18n="faq_title">Foire Aux Questions</h2>
+      <div class="gold-line"></div>
+    </div>
+
+    <div class="flex flex-col gap-4 reveal">
+      <div class="faq-item">
+        <button class="faq-trigger" onclick="toggleFaq(this)">
+          <span class="font-display font-bold text-sm md:text-base" data-i18n="faq1_q">Est-ce que l'accès au club VIP est vraiment 100% gratuit ?</span>
+          <i class="fa-solid fa-chevron-down faq-icon" aria-hidden="true"></i>
+        </button>
+        <div class="faq-content">
+          <p data-i18n="faq1_a">Oui, absolument. Aucun abonnement mensuel, aucun frais caché. La seule condition obligatoire est de créer un compte réel sur Deriv en utilisant notre lien partenaire et d'y déposer votre propre capital de trading. Nous sommes rémunérés directement par la plateforme en tant que courtier affilié, ce qui nous permet de vous offrir tous nos outils et signaux gratuitement.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-trigger" onclick="toggleFaq(this)">
+          <span class="font-display font-bold text-sm md:text-base" data-i18n="faq2_q">Quel est le capital minimum requis pour commencer ?</span>
+          <i class="fa-solid fa-chevron-down faq-icon" aria-hidden="true"></i>
+        </button>
+        <div class="faq-content">
+          <p data-i18n="faq2_a">Deriv est idéal pour les débutants car le dépôt minimum est très bas (à partir de 5 à 10 USD selon la méthode choisie). Cependant, pour appliquer un bon money management (gestion du risque) sur nos signaux VIP et optimiser vos gains, nous vous recommandons de commencer idéalement avec un capital de 20 à 50 USD.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-trigger" onclick="toggleFaq(this)">
+          <span class="font-display font-bold text-sm md:text-base" data-i18n="faq3_q">Comment faire mes dépôts et mes retraits à Madagascar ?</span>
+          <i class="fa-solid fa-chevron-down faq-icon" aria-hidden="true"></i>
+        </button>
+        <div class="faq-content">
+          <p data-i18n="faq3_a">C'est très simple grâce au système intégré Deriv P2P (Peer-to-Peer). Vous pouvez acheter et vendre des dollars Deriv directement avec d'autres traders locaux en payant par Mobile Money (MVola, Orange Money, Airtel Money). Les transactions sont sécurisées par Deriv. En cas de besoin, notre équipe est là sur WhatsApp pour vous guider pas à pas dans l'opération.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-trigger" onclick="toggleFaq(this)">
+          <span class="font-display font-bold text-sm md:text-base" data-i18n="faq4_q">Je suis un débutant complet, puis-je réussir avec vos signaux ?</span>
+          <i class="fa-solid fa-chevron-down faq-icon" aria-hidden="true"></i>
+        </button>
+        <div class="faq-content">
+          <p data-i18n="faq4_a">Tout à fait. Nos signaux VIP contiennent toutes les indications nécessaires : l'actif à trader (ex: Crash/Boom, Volatility, Or), le sens (Achat ou Vente), le prix d'entrée, ainsi que les niveaux de coupure (Stop Loss et Take Profit). Vous avez juste à copier ces données sur votre application MetaTrader 5 (MT5). De plus, notre communauté partage régulièrement des conseils pour vous aider à progresser.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-trigger" onclick="toggleFaq(this)">
+          <span class="font-display font-bold text-sm md:text-base" data-i18n="faq5_q">Quels types d'actifs allons-nous trader ensemble ?</span>
+          <i class="fa-solid fa-chevron-down faq-icon" aria-hidden="true"></i>
+        </button>
+        <div class="faq-content">
+          <p data-i18n="faq5_a">Nous nous concentrons principalement sur l'Or (XAU/USD) ainsi que sur les indices synthétiques exclusifs de Deriv (comme les Volatility Indices, Boom, Crash, et Step Index). Ces indices synthétiques ont l'avantage d'être disponibles 24h/24 et 7j/7, de ne pas être influencés par les actualités politiques ou économiques mondiales, et de respecter parfaitement les concepts d'analyse institutionnelle SMC/ICT.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center mt-16 reveal">
       <p class="text-sm mb-6" style="color:#94A3B8;" data-i18n="final_cta_intro">Compte créé ? Envoyez-nous votre ID maintenant pour activer votre accès VIP !</p>
       <a href="https://wa.me/261381154993?text=Bonjour%20Mc%20Anthonio,%20j'ai%20cr%C3%A9%C3%A9%20mon%20compte%20Deriv%20via%20ton%20lien.%20Voici%20mon%20ID%20pour%20rejoindre%20le%20club%20:%20"
          target="_blank" rel="noopener noreferrer"
@@ -538,7 +644,7 @@ const translations = {
     hero_h1_line1: "Signaux Institutionnels",
     hero_h1_line2: "SMC / ICT & Outils Algo",
     hero_h1_line3: "100% Gratuits",
-    hero_subtitle: "Rejoignez notre club exclusif en créant votre compte Deriv via notre lien partenaire. Aucun frais, aucune condition cached — juste l'accès à nos ressources premium.",
+    hero_subtitle: "Rejoignez notre club exclusif en créant votre compte Deriv via notre lien partenaire. Aucun frais, aucune condition cachée — juste l'accès à nos ressources premium.",
     hero_condition: "Condition unique : S'inscrire sur Deriv via notre lien partenaire",
     hero_cta: "Créer mon Compte Deriv Gratuit",
     hero_guide: "Voir le tutoriel",
@@ -570,6 +676,18 @@ const translations = {
     step5_desc: "Déposez via Deriv P2P ou Mobile Money (MVola, Orange Money, Airtel Money). Même un petit montant suffit pour activer votre compte et débloquer toutes les fonctionnalités. Contactez-nous sur WhatsApp pour de l'aide.",
     step6_title: "Envoyer votre ID sur WhatsApp 🎉",
     step6_desc: "Copiez votre ID Deriv (numéro CR… ou identifiant MT5) et envoyez-le nous sur WhatsApp. Notre équipe validera votre accès au club VIP dans les plus brefs délais.",
+    faq_eyebrow: "DES QUESTIONS ?",
+    faq_title: "Foire Aux Questions",
+    faq1_q: "Est-ce que l'accès au club VIP est vraiment 100% gratuit ?",
+    faq1_a: "Oui, absolument. Aucun abonnement mensuel, aucun frais caché. La seule condition obligatoire est de créer un compte réel sur Deriv en utilisant notre lien partenaire et d'y déposer votre propre capital de trading. Nous sommes rémunérés directement par la plateforme en tant que courtier affilié, ce qui nous permet de vous offrir tous nos outils et signaux gratuitement.",
+    faq2_q: "Quel est le capital minimum requis pour commencer ?",
+    faq2_a: "Deriv est idéal pour les débutants car le dépôt minimum est très bas (à partir de 5 à 10 USD selon la méthode choisie). Cependant, pour appliquer un bon money management (gestion du risque) sur nos signaux VIP et optimiser vos gains, nous vous recommandons de commencer idéalement avec un capital de 20 à 50 USD.",
+    faq3_q: "Comment faire mes dépôts et mes retraits à Madagascar ?",
+    faq3_a: "C'est très simple grâce au système intégré Deriv P2P (Peer-to-Peer). Vous pouvez acheter et vendre des dollars Deriv directement avec d'autres traders locaux en payant par Mobile Money (MVola, Orange Money, Airtel Money). Les transactions sont sécurisées par Deriv. En cas de besoin, notre équipe est là sur WhatsApp pour vous guider pas à pas dans l'opération.",
+    faq4_q: "Je suis un débutant complet, puis-je réussir avec vos signaux ?",
+    faq4_a: "Tout à fait. Nos signaux VIP contiennent toutes les indications nécessaires : l'actif à trader (ex: Crash/Boom, Volatility, Or), le sens (Achat ou Vente), le prix d'entrée, ainsi que les niveaux de coupure (Stop Loss et Take Profit). Vous avez juste à copier ces données sur votre application MetaTrader 5 (MT5). De plus, notre communauté partage régulièrement des conseils pour vous aider à progresser.",
+    faq5_q: "Quels types d'actifs allons-nous trader ensemble ?",
+    faq5_a: "Nous nous concentrons principalement sur l'Or (XAU/USD) ainsi que sur les indices synthétiques exclusifs de Deriv (comme les Volatility Indices, Boom, Crash, et Step Index). Ces indices synthétiques ont l'avantage d'être disponibles 24h/24 et 7j/7, de ne pas être influencés par les actualités politiques ou économiques mondiales, et de respecter parfaitement les concepts d'analyse institutionnelle SMC/ICT.",
     final_cta_intro: "Compte créé ? Envoyez-nous votre ID maintenant pour activer votre accès VIP !",
     final_cta_btn: "Envoyer mon ID sur WhatsApp",
     final_cta_note: "Réponse garantie sous 24h • Support en Malagasy & Français",
@@ -607,7 +725,7 @@ const translations = {
     step1_desc: "Tsindrio ny bokotra \"Mamorona Kaonty Deriv Maimaim-poana\" etsy ambany na eny ambony pejy. Io rohy mpiara-miasa io no ilaina mba hanamarinana ny fidiran'ny VIP anao.",
     step1_btn: "Hivoaka amin'ny Deriv →",
     step2_title: "Mamorona kaonty & manamarina the email",
-    step2_desc: "Ampidiro ny adiresy email anao amin'ny pejin'ny Deriv. Jereo ny voky mailaka, tsindrio ny rohy fanamarinana, ary ampidiro ny teny miafina voaro anao.",
+    step2_desc: "Ampidiro ny adiresy email anao amin'ny pejin'ny Deriv. Jereo the voky mailaka, tsindrio ny rohy fanamarinana, ary ampidiro ny teny miafina voaro anao.",
     step3_title: "Hanampy Kaonty Tena amin'ny Deriv",
     step3_desc: "Avy amin'ny dashboard Deriv anao, tsindrio ny \"Hanampy kaonty tena\" ary fidio ny karazana \"Options & Multiplicateurs\". Fenoy ny mombamomba anao manokana. Ny isa kaonty CR… dia ny ID lehibe anao.",
     optional: "Tsy voatery",
@@ -617,6 +735,18 @@ const translations = {
     step5_desc: "Mampiditra amin'ny alàlan'ny Deriv P2P na Mobile Money (MVola, Orange Money, Airtel Money). Ampy aza ny vola kely mba hanafoanana ny kaonty anao sy hahafohezana ny fiasa rehetra. Mifandraisa aminay amin'ny WhatsApp mba hahazo fanampiana.",
     step6_title: "Alefaso ny ID anao amin'ny WhatsApp 🎉",
     step6_desc: "Adikao ny ID Deriv anao (isa CR… na mombamomba MT5) ary alefaso aminay amin'ny WhatsApp. Ny ekipanay hanamarina ny fidiran'ny klioba VIP anao ao anatin'ny fotoana kely.",
+    faq_eyebrow: "FANONTANIANA ?",
+    faq_title: "Foire Aux Questions",
+    faq1_q: "Maimaim-poana 100% marina ve ny fidirana amin'ny klioba VIP ?",
+    faq1_a: "Eny, tena maimaim-poana tanteraka. Tsy misy sarany isam-bolana na sarany miafina. Ny fepetra tokana dia ny famoronana kaonty amin'ny Deriv amin'ny alàlan'ny rohy mpiara-miasa aminay ary mampiditra ny renivolanao any. Ny sehatra Deriv no mandoha anay satria mpiara-miasa izahay, izany no ahafahanay manome fitaovana sy signal maimaim-poana ho anao.",
+    faq2_q: "Hafiriana ny vola farany kely azo atombohana ?",
+    faq2_a: "Tsara ho an'ny mpianatra vao manomboka ny Deriv satria ambany dia ambany ny petra-bola (manomboka amin'ny 5 ka hatramin'ny 10 USD raha miankina amin'ny fomba fidinao). Na izany aza, mba hahafahana mitantana tsara ny loza mety hitranga (money management) amin'ireo signal VIP ary hahazoana tombony tsara, dia manoro hevitra izahay hanomboka amin'ny 20 ka hatramin'ny 50 USD.",
+    faq3_q: "Ahoana ny fomba fampidirana sy famoahana vola eto Madagasikara ?",
+    faq3_a: "Tena tsotra izany amin'ny alàlan'ny rafitra Deriv P2P (Peer-to-Peer). Afaka mividy sy mivarotra dolara Deriv mivantana amin'ireo mpivarotra hafa eto an-toerana ianao amin'ny alàlan'ny Mobile Money (MVola, Orange Money, Airtel Money). Ny fifanakalozana dia arovan'ny Deriv. Raha misy fanontaniana dia eo foana ny ekipanay amin'ny WhatsApp hitarika anao.",
+    faq4_q: "Vao manomboka tanteraka aho, afaka mahomby amin'ny signal-nao ve ?",
+    faq4_a: "Eny, afaka tsara ianao. Ny signal VIP-nay dia misy ny torolalana rehetra ilainao : ny karazany haroso (ohatra: Crash/Boom, Volatility, Volamena), ny hetsika (Vidy na Varotra), ny vidiny idirana, ary ny fetra hijanonana (Stop Loss sy Take Profit). Ny mandika an'ireo fotsiny no ataonao ao amin'ny MetaTrader 5 (MT5)-nao. Ankoizay, mizara torohevitra foana ny fikambanana hanampiana anao handroso.",
+    faq5_q: "Inona ireo karazana tsena harafesintsika miaraka ?",
+    faq5_a: "Mifantoka indrindra amin'ny Volamena (XAU/USD) sy ireo indice synthétique miavaka ao amin'ny Deriv izahay (toy ny Volatility Indices, Boom, Crash, ary Step Index). Ny tombony amin'ireto indice synthétique ireto dia misokatra 24 ora/24 sy 7 andro/7 izy ireo, tsy voasaron'ny vaovao politika na ara-toekarena eran-tany, ary manaraka tsara ny fitsipiky ny fanadihadiana SMC/ICT.",
     final_cta_intro: "Noforonina sahady ny kaonty? Alefaso aminay ny ID anao izao mba hanajanona ny fidiran'ny VIP anao!",
     final_cta_btn: "Alefaso ny ID amin'ny WhatsApp",
     final_cta_note: "Valiny voarantea ao anatin'ny 24ora • Fanohanana amin'ny Malagasy & Frantsay",
@@ -664,6 +794,18 @@ const translations = {
     step5_desc: "Deposit via Deriv P2P or Mobile Money (MVola, Orange Money, Airtel Money). Even a small amount is enough to activate your account and unlock all features. Contact us on WhatsApp for help.",
     step6_title: "Send your ID on WhatsApp 🎉",
     step6_desc: "Copy your Deriv ID (CR… number or MT5 identifier) and send it to us on WhatsApp. Our team will validate your VIP club access as soon as possible.",
+    faq_eyebrow: "QUESTIONS ?",
+    faq_title: "Frequently Asked Questions",
+    faq1_q: "Is access to the VIP club really 100% free ?",
+    faq1_a: "Yes, absolutely. No monthly subscriptions, no hidden fees. The only mandatory condition is to create a real account on Deriv using our partner link and deposit your own trading capital. We are compensated directly by the platform as an affiliated broker, allowing us to offer you all our tools and signals for free.",
+    faq2_q: "What is the minimum capital required to start ?",
+    faq2_a: "Deriv is ideal for beginners because the minimum deposit is very low (from 5 to 10 USD depending on the chosen method). However, to properly apply proper money management on our VIP signals and optimize your gains, we recommend starting ideally with a capital of 20 to 50 USD.",
+    faq3_q: "How do I make my deposits and withdrawals in Madagascar ?",
+    faq3_a: "It's very simple thanks to the integrated Deriv P2P (Peer-to-Peer) system. You can buy and sell Deriv dollars directly with other local traders by paying via Mobile Money (MVola, Orange Money, Airtel Money). Transactions are secured by Deriv. If needed, our team is available on WhatsApp to guide you step by step.",
+    faq4_q: "I am a complete beginner, can I succeed with your signals ?",
+    faq4_a: "Absolutely. Our VIP signals contain all the necessary details: the asset to trade (e.g., Crash/Boom, Volatility, Gold), the direction (Buy or Sell), the entry price, and the risk levels (Stop Loss and Take Profit). You just have to copy this data onto your MetaTrader 5 (MT5) application. Moreover, our community regularly shares advice to help you improve.",
+    faq5_q: "What types of assets will we trade together ?",
+    faq5_a: "We focus mainly on Gold (XAU/USD) and Deriv's exclusive synthetic indices (such as Volatility Indices, Boom, Crash, and Step Index). These synthetic indices have the advantage of being available 24/7, unaffected by global news, and respect institutional SMC/ICT concepts perfectly.",
     final_cta_intro: "Account created? Send us your ID now to activate your VIP access!",
     final_cta_btn: "Send my ID on WhatsApp",
     final_cta_note: "Guaranteed reply within 24h • Support in Malagasy & French",
@@ -704,6 +846,30 @@ window.addEventListener('scroll', () => {
     navbar.classList.remove('scrolled');
   }
 }, { passive: true });
+
+// ── FAQ Toggle function (Nouveau) ────────────────────────────────────
+function toggleFaq(trigger) {
+  const item = trigger.parentElement;
+  const content = item.querySelector('.faq-content');
+  const isOpen = item.classList.contains('active');
+
+  // Close all other FAQ items smoothly
+  document.querySelectorAll('.faq-item').forEach(otherItem => {
+    if (otherItem !== item && otherItem.classList.contains('active')) {
+      otherItem.classList.remove('active');
+      otherItem.querySelector('.faq-content').style.maxHeight = '0px';
+    }
+  });
+
+  // Toggle current item
+  if (isOpen) {
+    item.classList.remove('active');
+    content.style.maxHeight = '0px';
+  } else {
+    item.classList.add('active');
+    content.style.maxHeight = content.scrollHeight + 'px';
+  }
+}
 
 // ── Intersection Observer for reveal animations ──────────────────────
 const revealEls = document.querySelectorAll('.reveal');
